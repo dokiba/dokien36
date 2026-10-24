@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hành Trình 13 Năm Khởi Nghiệp - Bản Lĩnh Chàng Trai Xứ Thanh</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1e1b18;
+            --primary-light: #3d352e;
+            --accent: #c5a059;
+            --cream: #fbf9f4;
+            --dark: #212529;
+            --light: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--dark);
+            background-color: var(--cream);
+            line-height: 1.8;
+        }
+
+        h1, h2, h3, .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Header */
+        header {
+            background: rgba(30, 27, 24, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 19px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 14px 36px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.3s, background 0.3s;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: #dfbc77;
+        }
+
+        /* Story Section */
+        .story {
+            padding: 120px 20px;
+            background: white;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #777;
+            font-size: 18px;
+            margin-bottom: 70px;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .story-text h3 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .story-text p {
+            margin-bottom: 20px;
+            color: #444;
+            font-size: 17px;
+        }
+
+        .story-img-container {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            display: inline-block;
+        }
+
+        /* Milestones / Stats */
+        .milestones {
+            padding: 80px 20px;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .milestone-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .milestone-item i {
+            font-size: 40px;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .milestone-item h4 {
+            font-size: 36px;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .milestone-item p {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        /* Inspiration Quote */
+        .inspiration {
+            padding: 100px 20px;
+            background: #f4eee1;
+            text-align: center;
+        }
+
+        .inspiration-box {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--accent);
+        }
+
+        .inspiration-box i {
+            font-size: 40px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .inspiration-box p {
+            font-size: 20px;
+            font-style: italic;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .inspiration-box span {
+            font-weight: 700;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 34px; }
+            .story-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .profile-img { width: 250px; height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">HÀNH TRÌNH 13 NĂM</a>
+            <ul class="nav-links">
+                <li><a href="#story">Câu Chuyện</a></li>
+                <li><a href="#journey">Dấu Mốc</a></li>
+                <li><a href="#inspiration">Cảm Hứng</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bản Lĩnh Chàng Trai Xứ Thanh <br><span>13 Năm Khởi Nghiệp Vươn Lên</span></h1>
+            <p>Hành trình vượt khó, tôi luyện ý chí và kiến tạo cơ đồ vững vàng tại phương Nam đầy nắng gió.</p>
+            <a href="#story" class="btn">Khám Phá Câu Chuyện</a>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story" id="story">
+        <div class="container">
+            <h2 class="section-title">Câu Chuyện Lập Nghiệp</h2>
+            <p class="section-subtitle">Từ ý chí sắt đá của tuổi trẻ đến thành quả tự hào hôm nay</p>
+            
+            <div class="story-grid">
+                <div class="story-text">
+                    <h3>Khởi Đầu Từ Hai Bàn Tay Trắng</h3>
+                    <p>Cách đây 13 năm, mang theo hoài bão lớn và tinh thần chịu thương chịu khó đặc trưng của người con xứ Thanh, chàng trai ấy đã dấn thân vào con đường lập nghiệp đầy thử thách.</p>
+                    <p>Mỗi bước đi là một mồ hôi, mỗi cột mốc vượt qua là một minh chứng cho bản lĩnh không chùn bước trước nghịch cảnh. Sự kiên định và chữ Tín đã trở thành nền móng vững chắc cho hành trình vươn tới thành công.</p>
+                    <p>Giờ đây, nhìn lại chặng đường đã qua, trái ngọt thu về chính là câu chuyện truyền cảm hứng mạnh mẽ cho thế hệ trẻ dám nghĩ, dám làm và dám vươn lên.</p>
+                </div>
+                <div class="story-img-container">
+                    <!-- Ảnh chân dung tải lên được tích hợp tại đây -->
+                    <img src="Do-Kien-36.jpg" alt="Chân dung lập nghiệp" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Milestones -->
+    <section class="milestones" id="journey">
+        <div class="milestone-grid">
+            <div class="milestone-item">
+                <i class="fa-solid fa-flag"></i>
+                <h4>13 Năm</h4>
+                <p>Hành trình kiên trì bám trụ, xây dựng và phát triển sự nghiệp bền vững.</p>
+            </div>
+            <div class="milestone-item">
+                <i class="fa-solid fa-mountain-sun"></i>
+                <h4>Xứ Thanh</h4>
+                <p>Nơi cội nguồn nuôi dưỡng ý chí kiên cường, bản lĩnh vượt khó.</p>
+            </div>
+            <div class="milestone-item">
+                <i class="fa-solid fa-star"></i>
+                <h4>Thành Công</h4>
+                <p>Khẳng định vị thế và lan tỏa nguồn cảm hứng sống tích cực.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inspiration Section -->
+    <section class="inspiration" id="inspiration">
+        <div class="container">
+            <div class="inspiration-box">
+                <i class="fa-solid fa-quote-left"></i>
+                <p>"Nghịch cảnh không phải là điểm dừng, mà là bệ phóng để ý chí con người vươn lên tầm cao mới. Thành quả hôm nay là minh chứng cho niềm tin không bao giờ tắt."</p>
+                <span>— Thông điệp truyền cảm hứng —</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Bản quyền thuộc về hành trình khát vọng vươn lên.</p>
+    </footer>
+
+</body>
+</html>
